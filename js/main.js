@@ -1,10 +1,6 @@
 const btnDarkMode = document.querySelector(".dark-mode-btn");
 
-// 1.Проверка темной темы на уровне системных настроек
-if (window.matchMedia && window.matchMedia("(prefers-color-schceme: dark)").matches) {
-    btnDarkMode.classList.add("dark-mode-btn--active");
-    document.body.classList.add("dark");
-}
+
 
 //2. Проверка localStorage на  темную тему
 if (localStorage.getItem('darkMode') === 'dark') {
@@ -15,7 +11,11 @@ if (localStorage.getItem('darkMode') === 'dark') {
     document.body.classList.remove("dark");
 }
 
-
+// 1.Проверка темной темы на уровне системных настроек
+if (window.matchMedia && window.matchMedia("(prefers-color-schceme: dark)").matches) {
+    btnDarkMode.classList.add("dark-mode-btn--active");
+    document.body.classList.add("dark");
+}
 
 
 
